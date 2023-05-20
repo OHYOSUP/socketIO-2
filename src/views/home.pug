@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Noom
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+    body
+        header
+            h1 Noom            
+        main
+            div#datachannelChat
+                ul#chatList
+                form#chatForm
+                    input(type="text", placeholder="메시지를 입력하세요", required)
+                    button Send
+
+            
+            div#welcome
+                form
+                    input(type="text", placeholder="room name", required)
+                    button Enter
+            div#call
+                div#myStream
+                    video#myFace(autoplay, playsinline, winth="400", height="400")
+                    button#video Camera off
+                    button#audio Mute
+                    select#cameras
+                        option(value = "device") Face Camera
+                    video#peersStream(autoplay, playsinline, winth="400", height="400")
+        script(src="/socket.io/socket.io.js") 
+        script(src="/public/app.js") 
